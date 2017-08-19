@@ -55,6 +55,10 @@
     <Compile Include="Entities\Owner.cs" />
     <Compile Include="Entities\Pet.cs" />
     <Compile Include="Infrastructure\DataAccessModule.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IGenericRepository.cs" />
+    <Compile Include="Interfaces\IRepositoryFactory.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\201708191130491_InitialCreate.cs" />
     <Compile Include="Migrations\201708191130491_InitialCreate.Designer.cs">
       <DependentUpon>201708191130491_InitialCreate.cs</DependentUpon>
@@ -66,9 +70,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708191130491_InitialCreate.resx">
       <DependentUpon>201708191130491_InitialCreate.cs</DependentUpon>
