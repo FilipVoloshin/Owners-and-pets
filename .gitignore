@@ -1,3 +1,7 @@
-OwnersPets.WebApi/.vs/
-OwnersPets.WebApi/OwnersPets.WebApi/bin/
-OwnersPets.WebApi/OwnersPets.WebApi/obj/
+backend/.vs/
+backend/OwnersPets.WebApi/bin/
+backend/OwnersPets.WebApi/obj/
+backend/OwnersPets.DAL/obj/
+backend/OwnersPets.DAL/bin/
+backend/OwnersPets.DAL/bin/
+backend/OwnersPets.DAL/Migrations/
