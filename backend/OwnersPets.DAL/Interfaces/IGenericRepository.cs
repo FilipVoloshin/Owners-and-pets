@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OwnersPets.DAL.Interfaces
@@ -8,9 +9,13 @@ namespace OwnersPets.DAL.Interfaces
     public interface IGenericRepository<T> : IRepository
     {
         Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsycn(int id);
+        T GetById(int id);
+        Task<T> GetByIdDeletedAsync(int id);
         void Create(T item);
         void Update(T item);
-        void Delete(int item);
+        void Delete(int id);
+        Task RestoreAsync(int id);
+        IQueryable<T> Query { get; }
+        IQueryable<T> Deleted { get; }
     }
 }

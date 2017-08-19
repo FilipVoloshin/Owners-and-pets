@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using OwnersPets.DAL.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace OwnersPets.DAL.Entities
 {
-    public class Owner
+    public class Owner : IEntity
     {
         public Owner()
         {
@@ -12,6 +13,8 @@ namespace OwnersPets.DAL.Entities
 
         [Key]
         public int Id { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         [Required]
         [StringLength(50)]

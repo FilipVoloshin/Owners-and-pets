@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using OwnersPets.DAL.Interfaces;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OwnersPets.DAL.Entities
@@ -18,10 +19,12 @@ namespace OwnersPets.DAL.Entities
         Turtle,
         Other
     }
-    public class Pet
+    public class Pet : IEntity
     {
         [Key]
         public int Id { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         [Required]
         [StringLength(50)]
