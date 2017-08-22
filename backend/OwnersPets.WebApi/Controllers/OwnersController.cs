@@ -60,6 +60,7 @@ namespace OwnersPets.WebApi.Controllers
             else
             {
                 ownerService.Update(owner);
+                
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
         }

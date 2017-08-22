@@ -1,6 +1,5 @@
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\OwnersPets.Core.dll
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\OwnersPets.Core.pdb
-C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\AutoMapper.dll
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\Ninject.dll
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\OwnersPets.DAL.dll
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\EntityFramework.dll
@@ -8,7 +7,6 @@ C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\Ninject.Extensions.Fact
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\Castle.Core.dll
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\OwnersPets.DAL.pdb
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\OwnersPets.DAL.dll.config
-C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\AutoMapper.xml
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\Ninject.xml
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\EntityFramework.xml
 C:\git_root\OwnersPets\backend\OwnersPets.Core\bin\Debug\Ninject.Extensions.Factory.xml

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using OwnersPets.Core.DTOs;
 using OwnersPets.DAL.Interfaces;
-using AutoMapper;
 using OwnersPets.DAL.Entities;
+using System.Linq;
 
 namespace OwnersPets.Core.Services
 {
@@ -21,8 +21,27 @@ namespace OwnersPets.Core.Services
         public async Task<IEnumerable<OwnerDTO>> GetAllAsync()
         {
             var owners = await unitOfWork.OwnersRepository.GetAllAsync();
-            Mapper.Initialize(cfg => cfg.CreateMap<Owner, OwnerDTO>());
-            return Mapper.Map<IEnumerable<Owner>, IEnumerable<OwnerDTO>>(owners);
+            var result = new List<OwnerDTO>();
+            foreach (var owner in owners)
+            {
+                var ownerDTO = new OwnerDTO
+                {
+                    Id = owner.Id,
+                    Name = owner.Name
+                };
+                if (owner.Pets != null)
+                {
+                    ownerDTO.Pets = owner.Pets.Select(c => new PetDTO
+                    {
+                        Id = c.Id,
+                        Name = c.Name,
+                        OwnerId = c.OwnerId,
+                        PetType = c.Type
+                    }).ToList();
+                };
+                result.Add(ownerDTO);
+            }
+            return result;
         }
 
         public OwnerDTO GetById(int id)
@@ -34,8 +53,22 @@ namespace OwnersPets.Core.Services
                 {
                     throw new NullReferenceException(nameof(owner));
                 }
-                Mapper.Initialize(cfg => cfg.CreateMap<Owner, OwnerDTO>());
-                return Mapper.Map<Owner, OwnerDTO>(owner);
+                var result = new OwnerDTO
+                {
+                    Id = owner.Id,
+                    Name = owner.Name
+                };
+                if (owner.Pets != null)
+                {
+                    result.Pets = owner.Pets.Select(c => new PetDTO
+                    {
+                        Id = c.Id,
+                        Name = c.Name,
+                        OwnerId = c.OwnerId,
+                        PetType = c.Type
+                    }).ToList();
+                };
+                return result;
             }
             catch (Exception ex)
             {
@@ -51,9 +84,14 @@ namespace OwnersPets.Core.Services
                 {
                     throw new NullReferenceException(nameof(owner));
                 }
-                Mapper.Initialize(cfg => cfg.CreateMap<OwnerDTO, Owner>());
-                var ownerModel = Mapper.Map<OwnerDTO, Owner>(owner);
+
+                var ownerModel = new Owner
+                {
+                    Name = owner.Name,
+                };
+
                 unitOfWork.OwnersRepository.Create(ownerModel);
+                unitOfWork.SaveAsync();
             }
             catch (Exception ex)
             {
@@ -69,9 +107,13 @@ namespace OwnersPets.Core.Services
                 {
                     throw new NullReferenceException(nameof(owner));
                 }
-                Mapper.Initialize(cfg => cfg.CreateMap<OwnerDTO, Owner>());
-                var ownerModel = Mapper.Map<OwnerDTO, Owner>(owner);
+                var ownerModel = new Owner
+                {
+                    Id = owner.Id,
+                    Name = owner.Name
+                };
                 unitOfWork.OwnersRepository.Update(ownerModel);
+                unitOfWork.SaveAsync();
             }
             catch (Exception ex)
             {
@@ -91,6 +133,7 @@ namespace OwnersPets.Core.Services
                 }
 
                 unitOfWork.OwnersRepository.Delete(id);
+                unitOfWork.SaveAsync();
             }
             catch (Exception ex)
             {

@@ -7,10 +7,9 @@ namespace OwnersPets.Core.DTOs
     {
         public int Id { get; set; }
 
-        public bool IsDeleted { get; set; }
-
         public string Name { get; set; }
 
+        //[JsonConverter(typeof(StringEnumConverter))]
         public PetType PetType { get; set; }
 
         public int OwnerId { get; set; }
