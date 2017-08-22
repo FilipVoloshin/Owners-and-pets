@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(OwnersPets.WebApi.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(OwnersPets.WebApi.App_Start.NinjectWebCommon), "Stop")]
+﻿[assembly: WebActivatorEx.PreApplicationStartMethod(typeof($rootnamespace$.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof($rootnamespace$.App_Start.NinjectWebCommon), "Stop")]
 
-namespace OwnersPets.WebApi.App_Start
+namespace $rootnamespace$.App_Start
 {
     using System;
     using System.Web;
@@ -10,9 +10,6 @@ namespace OwnersPets.WebApi.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using Ninject.Modules;
-    using OwnersPets.DAL.Infrastructure;
-    using OwnersPets.Core.Infrastructure;
 
     public static class NinjectWebCommon 
     {
@@ -42,8 +39,7 @@ namespace OwnersPets.WebApi.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            var modules = new INinjectModule[] { new DataAccessModule(), new ServiceModule() };
-            var kernel = new StandardKernel(modules);
+            var kernel = new StandardKernel();
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
