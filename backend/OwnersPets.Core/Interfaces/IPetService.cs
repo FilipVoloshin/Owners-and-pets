@@ -7,9 +7,9 @@ namespace OwnersPets.Core.Interfaces
     public interface IPetService
     {
         Task<IEnumerable<PetDTO>> GetAllAsync();
-        PetDTO GetByIdAsync(int id);
-        void CreateAsync(PetDTO pet);
-        void UpdateAsync(PetDTO pet);
-        void DeleteAsync(int id);
+        PetDTO GetById(int id);
+        void Create(PetDTO pet);
+        void Update(PetDTO pet);
+        void Delete(int id);
     }
 }

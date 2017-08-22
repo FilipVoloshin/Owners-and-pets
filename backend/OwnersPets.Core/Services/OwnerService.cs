@@ -59,7 +59,6 @@ namespace OwnersPets.Core.Services
             {
                 throw ex;
             }
-
         }
 
         public void Update(OwnerDTO owner)
