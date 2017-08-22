@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DTOs\OwnerDTO.cs" />
     <Compile Include="DTOs\PetDTO.cs" />
+    <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Interfaces\IOwnerService.cs" />
     <Compile Include="Interfaces\IPetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,9 +58,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\OwnersPets.DAL\OwnersPets.DAL.csproj">
       <Project>{c107b9a4-0c54-4051-81be-395f0a601a8d}</Project>
