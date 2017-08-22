@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwnersPets.WebApi", "Owners
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwnersPets.DAL", "OwnersPets.DAL\OwnersPets.DAL.csproj", "{C107B9A4-0C54-4051-81BE-395F0A601A8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwnersPets.Core", "OwnersPets.Core\OwnersPets.Core.csproj", "{731AB149-E0B1-40F4-B845-F346A06A4A6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C107B9A4-0C54-4051-81BE-395F0A601A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C107B9A4-0C54-4051-81BE-395F0A601A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C107B9A4-0C54-4051-81BE-395F0A601A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731AB149-E0B1-40F4-B845-F346A06A4A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731AB149-E0B1-40F4-B845-F346A06A4A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731AB149-E0B1-40F4-B845-F346A06A4A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731AB149-E0B1-40F4-B845-F346A06A4A6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
