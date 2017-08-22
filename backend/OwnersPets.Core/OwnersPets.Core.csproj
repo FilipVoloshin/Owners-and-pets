@@ -46,10 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\OwnerDTO.cs" />
+    <Compile Include="DTOs\PetDTO.cs" />
+    <Compile Include="Interfaces\IOwnerService.cs" />
+    <Compile Include="Interfaces\IPetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\OwnerService.cs" />
+    <Compile Include="Services\PetService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OwnersPets.DAL\OwnersPets.DAL.csproj">
+      <Project>{c107b9a4-0c54-4051-81be-395f0a601a8d}</Project>
+      <Name>OwnersPets.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
